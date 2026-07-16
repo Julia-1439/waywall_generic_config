@@ -41,8 +41,8 @@ local config = {
         variant = (cfg.xkb_config.enabled and cfg.xkb_config.variant) or nil,
         options = (cfg.xkb_config.enabled and cfg.xkb_config.options) or nil,
 
-        repeat_rate = 40,
-        repeat_delay = 300,
+        repeat_rate = 60,
+        repeat_delay = 200,
         remaps = keyboard_remaps,
         sensitivity = (cfg.sens_change.enabled and cfg.sens_change.normal) or 1.0,
         confine_pointer = false,
@@ -56,7 +56,7 @@ local config = {
     experimental = {
         debug = false,
         jit = false,
-        tearing = false,
+        tearing = true,
     },
     window = {
         fullscreen_width = cfg.resolution[1],
