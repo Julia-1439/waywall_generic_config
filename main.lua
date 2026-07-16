@@ -451,6 +451,7 @@ return function(cfg, remaps)
     }
 
     require("extras")(config)
+    mirrors_compiler.config_actions(config)
 
     return config
 end

@@ -13,7 +13,25 @@ local mirrors_cfg = {
     measuring_window = { x = nil, y = nil, size = nil },
 }
 
+local temp_cfg = {
+    e_count = { enabled = nil, x = nil, y = nil, size = nil, colorkey = nil },
+
+    thin_pie = { enabled = nil, x = nil, y = 400, size = nil, colorkey = nil },
+    tall_pie = { enabled = nil, x = nil, y = 400, size = nil, colorkey = nil },
+
+    thin_percent = { enabled = nil, x = nil, y = nil, size = nil },
+    tall_percent = { enabled = nil, x = nil, y = nil, size = nil },
+
+    measuring_window = { x = nil, y = nil, size = nil },
+}
+
 for mirror, settings in pairs(mirrors_cfg) do
+    for setting, _ in pairs(settings) do
+        setting = require("mirror_editor." .. mirror .. "." .. setting)
+    end
+end
+
+for mirror, settings in pairs(temp_cfg) do
     for setting, _ in pairs(settings) do
         setting = require("mirror_editor." .. mirror .. "." .. setting)
     end
@@ -21,7 +39,11 @@ end
 
 mirrors_cfg.e_count.show_c = true
 mirrors_cfg.percentages_match_text = false
-mirrors_cfg.stretched_measure = require("mirror_settings.measuring_window.stretched")
+mirrors_cfg.stretched_measure = require("mirror_editor.measuring_window.stretched")
+
+temp_cfg.e_count.show_c = true
+temp_cfg.percentages_match_text = false
+temp_cfg.stretched_measure = require("mirror_editor.measuring_window.stretched")
 
 local M = {}
 local waywall_config_path = os.getenv("HOME") .. "/.config/waywall/"
@@ -218,8 +240,50 @@ local list_contains = function(words, word)
     return false
 end
 
+local normalize_key = function(key)
+    key = key:gsub("^%*%-", "")
+    key = key:lower()
+    return key
+end
+
+
+-- EDITOR CODE
+local editor_text = "Edit Mode:"
+local mirror_list = {
+    thin = {
+        "e_counter",
+        "pie",
+        "percentages"
+    },
+    tall = {
+        "e_counter",
+        "pie",
+        "percentages",
+        "measuring_overlay"
+    },
+}
+
+local editor_text_object = nil
+
+
+
+
+
+
 local handler = function(key)
     print(key)
+    if key == "return" then
+        if editor_text_object then
+            editor_text_object:close()
+            editor_text_object = nil
+        end
+        if not EDIT_MODE then
+            EDIT_MODE = true
+            editor_text_object = waywall.text(editor_text, { x = 10, y = 10, size = 3, color = "#FFFFFF" })
+        else
+            EDIT_MODE = false
+        end
+    end
 end
 
 M.config_actions = function(config)
@@ -232,7 +296,7 @@ M.config_actions = function(config)
 
     local saved = {}
     for key, func in pairs(config.actions) do
-        local normalized_key = M.normalize_key(key)
+        local normalized_key = normalize_key(key)
         if list_contains(keys, normalized_key) then
             config.actions[key] = function()
                 return EDIT_MODE and handler(normalized_key) or func()
@@ -251,6 +315,10 @@ M.config_actions = function(config)
                 return EDIT_MODE and handler(letter) or false
             end
         end
+    end
+
+    config.actions["shift-return"] = function()
+        return handler("return")
     end
 end
 
