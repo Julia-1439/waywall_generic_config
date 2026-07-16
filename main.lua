@@ -1,6 +1,7 @@
 -- ==== WAYWALL ====
 local waywall = require("waywall")
 local helpers = require("waywall.helpers")
+local mirrors_compiler = require("mirror_editor.compiler")
 
 -- ==== RESOURCES ====
 local waywall_config_path = os.getenv("HOME") .. "/.config/waywall/"
@@ -98,6 +99,8 @@ return function(cfg, remaps)
         { input = "#E96D4D", output = cfg.percentages_match_text and cfg.text_col or cfg.pie_chart_1 },
         { input = "#45CB65", output = cfg.percentages_match_text and cfg.text_col or cfg.pie_chart_2 },
     }
+
+    mirrors_compiler.mirrors(cfg)
 
     if not cfg.mirror_editor then
         -- e counter
