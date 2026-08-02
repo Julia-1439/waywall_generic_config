@@ -31,15 +31,15 @@ for mirror, settings in pairs(mirrors_cfg) do
     end
 end
 
+mirrors_cfg.e_count.show_c = true
+mirrors_cfg.percentages_match_text = false
+mirrors_cfg.stretched_measure = require("mirror_editor.measuring_window.stretched")
+
 for mirror, settings in pairs(temp_cfg) do
     for setting, _ in pairs(settings) do
         setting = require("mirror_editor." .. mirror .. "." .. setting)
     end
 end
-
-mirrors_cfg.e_count.show_c = true
-mirrors_cfg.percentages_match_text = false
-mirrors_cfg.stretched_measure = require("mirror_editor.measuring_window.stretched")
 
 temp_cfg.e_count.show_c = true
 temp_cfg.percentages_match_text = false
@@ -50,6 +50,13 @@ local waywall_config_path = os.getenv("HOME") .. "/.config/waywall/"
 local overlay_path = waywall_config_path .. "resources/measuring_overlay.png"
 local stretched_overlay_path = waywall_config_path .. "resources/stretched_overlay.png"
 EDIT_MODE = false
+
+local save_settings = function()
+    local config_path = os.getenv("HOME") .. "/.config/waywall/"
+    local settings_path = config_path .. "mirror_editor/"
+
+    wayawll.exec("touch" .. config_path .. "reload.lua && rm " .. config_path .. "reload.lua")
+end
 
 M.mirrors = function(cfg)
     -- colors
@@ -282,6 +289,7 @@ local handler = function(key)
             editor_text_object = waywall.text(editor_text, { x = 10, y = 10, size = 3, color = "#FFFFFF" })
         else
             EDIT_MODE = false
+            save_settings()
         end
     end
 end
