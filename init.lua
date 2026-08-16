@@ -4,7 +4,7 @@ local main = require("main")
 local remaps = require("remaps")
 
 local cfg = {
-    debug_text = true,
+    debug_text = false,
 
     -- ==== LOOKS ====
     resolution = { 1920, 1080 },
