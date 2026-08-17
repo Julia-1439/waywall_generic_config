@@ -57,7 +57,7 @@ local cfg = {
 
     -- during game actions
     toggle_ninbot_key = "Control-Shift-G",
-    toggle_remaps_key = "Insert",
+    toggle_remaps_key = "Control-U",
 
 
     -- ==== KEYBOARD ====
