@@ -9,6 +9,8 @@ return {
 
         -- Disabled keys 
         -- ["F23"] = "F24",
+        ["F3"] = "F24",
+        ["RIGHTSHIFT"] = "LEFTALT",
     },
 
     menu_kb = {
