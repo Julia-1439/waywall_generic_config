@@ -14,6 +14,8 @@ return {
     menu_kb = {
         ["A"] = "Y",
         ["Y"] = "A",
+        ["CAPSLOCK"] = "BACKSPACE",
+        ["BACKSPACE"] = "CAPSLOCK",
     },
 
     normal_kb = {
