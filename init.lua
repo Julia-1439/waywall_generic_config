@@ -52,7 +52,7 @@ local cfg = {
     tall = { key = "*-F4", f3_safe = false, ingame_only = false },
 
     -- startup actions
-    toggle_fullscreen_key = "Shift-O",
+    toggle_fullscreen_key = "F11",
     launch_paceman_key = "Shift-P",
 
     -- during game actions
