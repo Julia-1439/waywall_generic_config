@@ -4,11 +4,11 @@ return {
         ["CAPSLOCK"] = "F3", 
         ["LEFTALT"] = "RIGHTSHIFT",
         ["5"] = "0",
-        ["0"] = "5",
 
-        -- Disabled keys 
+        -- Swap to avoid duplicate keys for same input
         ["F3"] = "CAPSLOCK",
         ["RIGHTSHIFT"] = "LEFTALT",
+        ["0"] = "5", 
     },
 
     menu_kb = {
