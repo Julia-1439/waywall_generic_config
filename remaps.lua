@@ -11,6 +11,9 @@ return {
         -- ["F23"] = "F24",
     },
 
+    menu_kb = {
+    },
+
     normal_kb = {
         -- Add any remaps you want to keep when disabling normal remaps (not necessary)
 
