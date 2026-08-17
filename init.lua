@@ -53,7 +53,7 @@ local cfg = {
 
     -- startup actions
     toggle_fullscreen_key = "F11",
-    launch_paceman_key = "Shift-P",
+    launch_paceman_key = "F24",
 
     -- during game actions
     toggle_ninbot_key = "*-apostrophe",
