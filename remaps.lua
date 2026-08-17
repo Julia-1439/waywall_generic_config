@@ -12,6 +12,8 @@ return {
     },
 
     menu_kb = {
+        ["A"] = "Y",
+        ["Y"] = "A",
     },
 
     normal_kb = {
