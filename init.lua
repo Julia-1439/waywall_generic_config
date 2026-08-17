@@ -62,7 +62,7 @@ local cfg = {
 
     -- ==== KEYBOARD ====
     xkb_config = {     -- set any setting to nil if unwanted
-        enabled = false,
+        enabled = true,
         layout = "mc", -- ~/.config/xkb/symbols/mc
         rules = nil,   -- ~/.config/xkb/rules/...
         variant = "basic",
