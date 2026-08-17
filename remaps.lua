@@ -7,7 +7,7 @@ return {
         ["0"] = "5",
 
         -- Disabled keys 
-        ["F3"] = "F24",
+        ["F3"] = "CAPSLOCK",
         ["RIGHTSHIFT"] = "LEFTALT",
     },
 
