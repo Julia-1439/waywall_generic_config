@@ -40,10 +40,8 @@ return function(cfg, remaps)
         end
         if state.inworld == "unpaused" then 
             keyboard_remaps = remaps.remapped_kb
-            print("foo")
         else
             keyboard_remaps = remaps.menu_kb
-            print("bar")
         end
         waywall.set_remaps(keyboard_remaps)
     end)
