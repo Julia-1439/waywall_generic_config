@@ -56,7 +56,7 @@ local cfg = {
     launch_paceman_key = "F24",
 
     -- during game actions
-    toggle_ninbot_key = "*-apostrophe",
+    toggle_ninbot_key = "Control-Shift-G",
     toggle_remaps_key = "Insert",
 
 
