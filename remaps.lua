@@ -5,10 +5,8 @@ return {
         ["LEFTALT"] = "RIGHTSHIFT",
         ["5"] = "0",
         ["0"] = "5",
-        -- ["LEFTMETA"] = "F23",  
 
         -- Disabled keys 
-        -- ["F23"] = "F24",
         ["F3"] = "F24",
         ["RIGHTSHIFT"] = "LEFTALT",
     },
