@@ -33,17 +33,13 @@ local debug_text = "Press Shift + I to show keybinds.\n\n" ..
 return function(cfg, remaps)
     local keyboard_remaps = remaps.remapped_kb
     local other_remaps = remaps.normal_kb
+    local check_ingame = helpers.ingame_only(function() return true end)
     waywall.listen("state", function () 
-        local state = waywall.state()
-        if state.screen ~= "inworld" then
-            return
-        end
-        if state.inworld == "unpaused" then 
-            keyboard_remaps = remaps.remapped_kb
+        if check_ingame() then
+            waywall.set_remaps(remaps.remapped_kb)
         else
-            keyboard_remaps = remaps.menu_kb
+            waywall.set_remaps(remaps.menu_kb)
         end
-        waywall.set_remaps(keyboard_remaps)
     end)
 
     local config = {
