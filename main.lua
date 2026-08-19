@@ -250,7 +250,7 @@ return function(cfg, remaps)
         tall_overlay_path,
         {
             dst = { x = 0, y = 0, w = cfg.resolution[1], h = cfg.resolution[2] },
-            depth = 1,
+            depth = -1,
         },
         cfg.tall_res[1], cfg.tall_res[2]
     )
@@ -258,7 +258,7 @@ return function(cfg, remaps)
         wide_overlay_path,
         {
             dst = { x = 0, y = 0, w = cfg.resolution[1], h = cfg.resolution[2] },
-            depth = 1,
+            depth = -1,
         },
         cfg.wide_res[1], cfg.wide_res[2]
     )
@@ -266,7 +266,7 @@ return function(cfg, remaps)
         thin_overlay_path,
         {
             dst = { x = 0, y = 0, w = cfg.resolution[1], h = cfg.resolution[2] },
-            depth = 1,
+            depth = -1,
         },
         cfg.thin_res[1], cfg.thin_res[2]
     )
