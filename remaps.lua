@@ -11,13 +11,6 @@ return {
         ["0"] = "5", 
     },
 
-    menu_kb = {
-        ["A"] = "Y",
-        ["Y"] = "A",
-        ["CAPSLOCK"] = "BACKSPACE",
-        ["BACKSPACE"] = "CAPSLOCK",
-    },
-
     normal_kb = {
         -- Add any remaps you want to keep when disabling normal remaps (not necessary)
 
