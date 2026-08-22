@@ -48,7 +48,7 @@ local cfg = {
     -- ==== MACROS ====
     -- resolution changes
     thin = { key = "*-Tab", f3_safe = false, ingame_only = true },
-    wide = { key = "*-Super_L", f3_safe = true, ingame_only = true },
+    wide = { key = "*-Super_L", f3_safe = false, ingame_only = true },
     tall = { key = "Control-B", f3_safe = false, ingame_only = false },
 
     -- startup actions
