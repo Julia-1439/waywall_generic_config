@@ -26,6 +26,13 @@ return function(config)
         end
     end)
 
+    config.actions["Control-W"] = function ()
+        if typing_in_menu then
+            waywall.press_key("A")
+        else
+            return false
+        end
+    end
 
     -- END
 end
