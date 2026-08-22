@@ -19,7 +19,7 @@ local cfg = {
     ninbot_anchor = {
         position = "topright", -- topleft, top, topright, left, right, bottomleft, bottomright
         x = 0,
-        y = 130,               -- offset
+        y = 0,               -- +130 offset for below top right timer 
     },
     ninbot_opacity = 1,        -- 0 to 1
 
