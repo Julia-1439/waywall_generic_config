@@ -13,13 +13,26 @@ return function(config)
             return false
         end
 
-        if not check_ingame() and (not typing_in_menu) then 
+        if not check_ingame() and not typing_in_menu then 
             waywall.press_key("Y")
             typing_in_menu = true
         else
             return false -- Pass the A-press to MC; do not consume
         end
     end
+
+    config.actions["*-Y"] = function () 
+        if not config.remaps_active then
+            return false
+        end
+
+        if not check_ingame() and not typing_in_menu then 
+            waywall.press_key("A")
+        else
+            return false 
+        end
+    end
+    
 
     -- (*)
     config.actions["*-M1"] = function ()
@@ -47,6 +60,18 @@ return function(config)
         end
     end
 
+    config.actions["Control-A"] = function ()
+        if not config.remaps_active then
+            return false
+        end
+
+        if typing_in_menu then
+            waywall.press_key("W") 
+        else
+            return false
+        end
+    end
+
     config.actions["CAPS_LOCK"] = function ()
         if not config.remaps_active then
             return false
@@ -58,6 +83,18 @@ return function(config)
             return false -- Pass the capslock-press to MC; do not consume
         end
 
+    end
+
+    config.actions["BACKSPACE"] = function ()
+        if not config.remaps_active then
+            return false
+        end
+
+        if not check_ingame() then 
+            waywall.press_key("CAPS_LOCK")
+        else
+            return false
+        end
     end
 
     -- Ninbot appears on F3+C
