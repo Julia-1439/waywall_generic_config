@@ -15,7 +15,6 @@ local overlay_path = waywall_config_path .. "resources/measuring_overlay.png"
 local stretched_overlay_path = waywall_config_path .. "resources/stretched_overlay.png"
 
 -- ==== INITS ====
-local remaps_active = true
 local rebind_text = nil
 local thin_active = false
 local keybinds_text = nil
@@ -330,7 +329,7 @@ return function(cfg, remaps)
 
     local function resize_helper(mode, run, ingame_only)
         local resize = function()
-            if not remaps_active then
+            if not config.remaps_active then
                 return false
             end
             if mode.f3_safe and waywall.get_key("F3") then
@@ -347,6 +346,8 @@ return function(cfg, remaps)
     end
 
     -- ==== KEYBINDS ====
+    config.remaps_active = true
+
     config.actions = {
 
         [cfg.thin.key] = resize_helper(cfg.thin, resolutions.thin, cfg.thin.ingame_only),
@@ -378,8 +379,8 @@ return function(cfg, remaps)
                 rebind_text:close()
                 rebind_text = nil
             end
-            if remaps_active then
-                remaps_active = false
+            if config.remaps_active then
+                config.remaps_active = false
                 waywall.set_remaps(other_remaps)
 
                 if cfg.xkb_config.enabled then
@@ -399,7 +400,7 @@ return function(cfg, remaps)
                         size = cfg.remaps_text_config.size
                     })
             else
-                remaps_active = true
+                config.remaps_active = true
                 waywall.set_remaps(keyboard_remaps)
 
                 if cfg.xkb_config.enabled then

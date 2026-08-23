@@ -9,6 +9,10 @@ return function(config)
     -- (*) Emulate A triggering Y when cursor-free 
     -- (*)
     config.actions["*-A"] = function () 
+        if not config.remaps_active then
+            return false
+        end
+
         if not check_ingame() and (not typing_in_menu) then 
             waywall.press_key("Y")
             typing_in_menu = true
@@ -32,6 +36,10 @@ return function(config)
 
     -- Emulate W triggering A when cursor-free
     config.actions["Control-W"] = function ()
+        if not config.remaps_active then
+            return false
+        end
+
         if typing_in_menu then
             waywall.press_key("A")
         else
@@ -41,6 +49,10 @@ return function(config)
 
     -- Ninbot appears on F3+C
     config.actions["*-C"] = function()
+        if not config.remaps_active then
+            return false
+        end
+
         if waywall.get_key("F3") then
             waywall.show_floating(true)
             return false
