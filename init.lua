@@ -42,7 +42,7 @@ local cfg = {
 
 
     measuring_window = { x = 30, y = 340, size = 10 },
-    stretched_measure = false,
+    stretched_measure = true,
 
 
     -- ==== MACROS ====
