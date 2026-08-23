@@ -68,7 +68,7 @@ local cfg = {
         variant = "basic",
         options = "caps:none",
     },
-    remaps_text_config = { text = "chat mode", x = 100, y = 100, size = 2, color = "#000000" },
+    remaps_text_config = { text = "(>u<) CHAT MODE ENABLED (^o^)", x = 200, y = 400, size = 4, color = "#ffffff" },
 
 
     -- ==== MISC ====
