@@ -47,6 +47,19 @@ return function(config)
         end
     end
 
+    config.actions["CAPS_LOCK"] = function ()
+        if not config.remaps_active then
+            return false
+        end
+
+        if not check_ingame() then 
+            waywall.press_key("BACKSPACE")
+        else
+            return false -- Pass the capslock-press to MC; do not consume
+        end
+
+    end
+
     -- Ninbot appears on F3+C
     config.actions["*-C"] = function()
         if not config.remaps_active then
