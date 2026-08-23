@@ -2,9 +2,9 @@ local waywall = require("waywall")
 local helpers = require("waywall.helpers")
 local remaps = require("remaps")
 
-local typing_in_menu = false
-local check_ingame = helpers.ingame_only(function() return true end) -- the anonymous function will return false if not ingame
 return function(config)
+    local typing_in_menu = false
+    local check_ingame = helpers.ingame_only(function() return true end) -- the anonymous function will return false if not ingame
 
     -- (*) Emulate A triggering Y when cursor-free 
     -- (*)
