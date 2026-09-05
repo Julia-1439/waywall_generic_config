@@ -36,8 +36,8 @@ local cfg = {
     thin_pie = { enabled = true, x = 1200, y = 400, size = 3, colorkey = true }, -- Turning off colorkeying also maintains the original pie chart's dimensions and shows the percentages
     tall_pie = { enabled = true, x = 1200, y = 400, size = 4, colorkey = TRUE }, -- Leave same as thin for seamlessness
 
-    thin_percent = { enabled = true, x = 1300, y = 500, size = 6 },
-    tall_percent = { enabled = true, x = 1300, y = 500, size = 6 }, -- Leave same as thin for seamlessness
+    thin_percent = { enabled = true, x = 1350, y = 500, size = 6 },
+    tall_percent = { enabled = true, x = 1350, y = 500, size = 6 }, -- Leave same as thin for seamlessness
     percentages_match_text = true,                                  -- Enabling this makes the percentages match the text color rather than the pie colors
 
 
