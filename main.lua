@@ -163,8 +163,8 @@ return function(cfg, remaps)
         for _, ck in ipairs(percentage_colors) do
             helpers.res_mirror(
                 {
-                    src = { x = cfg.thin_res[1] - 93, y = cfg.thin_res[2] - 221, w = 33, h = 25 },
-                    dst = { x = cfg.thin_percent.x, y = cfg.thin_percent.y, w = 33 * cfg.thin_percent.size, h = 25 * cfg.thin_percent.size },
+                    src = { x = cfg.thin_res[1] - 93, y = cfg.thin_res[2] - 221, w = 13, h = 25 },
+                    dst = { x = cfg.thin_percent.x, y = cfg.thin_percent.y, w = 13 * cfg.thin_percent.size, h = 25 * cfg.thin_percent.size },
                     depth = 3,
                     color_key = ck,
                 },
@@ -203,8 +203,8 @@ return function(cfg, remaps)
         for _, ck in ipairs(percentage_colors) do
             helpers.res_mirror(
                 {
-                    src = { x = 291, y = 16163, w = 33, h = 25 },
-                    dst = { x = cfg.tall_percent.x, y = cfg.tall_percent.y, w = 33 * cfg.tall_percent.size, h = 25 * cfg.tall_percent.size },
+                    src = { x = 291, y = 16163, w = 13, h = 25 },
+                    dst = { x = cfg.tall_percent.x, y = cfg.tall_percent.y, w = 13 * cfg.tall_percent.size, h = 25 * cfg.tall_percent.size },
                     depth = 3,
                     color_key = ck,
                 },
