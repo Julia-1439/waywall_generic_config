@@ -31,7 +31,7 @@ local cfg = {
 
 
     -- ==== MIRRORS ====
-    e_count = { enabled = true, x = 1340, y = 300, size = 5, colorkey = false, show_c = true },
+    e_count = { enabled = true, x = 1440, y = 505, size = 5, colorkey = false, show_c = true },
 
     thin_pie = { enabled = true, x = 1200, y = 400, size = 3, colorkey = true }, -- Turning off colorkeying also maintains the original pie chart's dimensions and shows the percentages
     tall_pie = { enabled = true, x = 1200, y = 400, size = 4, colorkey = true }, -- Leave same as thin for seamlessness
@@ -49,7 +49,7 @@ local cfg = {
     -- resolution changes
     thin = { key = "*-Tab", f3_safe = false, ingame_only = true },
     wide = { key = "*-Super_L", f3_safe = false, ingame_only = true },
-    tall = { key = "B", f3_safe = false, ingame_only = true },
+    tall = { key = "Control-B", f3_safe = false, ingame_only = false },
 
     -- startup actions
     toggle_fullscreen_key = "F11",
