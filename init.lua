@@ -56,7 +56,7 @@ local cfg = {
     launch_paceman_key = "F24",
 
     -- during game actions
-    toggle_ninbot_key = "Control-N", 
+    toggle_ninbot_key = "*-N", 
     toggle_remaps_key = "Control-U",
 
 
