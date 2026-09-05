@@ -34,7 +34,7 @@ local cfg = {
     e_count = { enabled = true, x = 1340, y = 300, size = 5, colorkey = false, show_c = true },
 
     thin_pie = { enabled = true, x = 1200, y = 400, size = 3, colorkey = true }, -- Turning off colorkeying also maintains the original pie chart's dimensions and shows the percentages
-    tall_pie = { enabled = true, x = 1200, y = 400, size = 4, colorkey = TRUE }, -- Leave same as thin for seamlessness
+    tall_pie = { enabled = true, x = 1200, y = 400, size = 4, colorkey = true }, -- Leave same as thin for seamlessness
 
     thin_percent = { enabled = true, x = 1350, y = 500, size = 6 },
     tall_percent = { enabled = true, x = 1350, y = 500, size = 6 }, -- Leave same as thin for seamlessness
