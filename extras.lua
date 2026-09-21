@@ -20,6 +20,7 @@ return function(config)
         end
     end
 
+    -- (*)
     config.actions["*-Y"] = function () 
         if not config.remaps_active then
             return false
@@ -70,7 +71,8 @@ return function(config)
         end
     end
 
-    config.actions["CAPS_LOCK"] = function ()
+    -- Backspace (alternatively, SHIFT-MOUSE4)
+    config.actions["*-MOUSE4"] = function ()
         if not config.remaps_active then
             return false
         end
@@ -78,7 +80,7 @@ return function(config)
         if not check_ingame() then 
             waywall.press_key("BACKSPACE")
         else
-            return false -- Pass the capslock-press to MC; do not consume
+            return false -- Pass the key press to MC; do not consume
         end
 
     end
@@ -89,7 +91,7 @@ return function(config)
         end
 
         if not check_ingame() then 
-            waywall.press_key("CAPS_LOCK")
+            waywall.press_key("MOUSE4")
         else
             return false
         end
