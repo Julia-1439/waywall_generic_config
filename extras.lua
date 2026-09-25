@@ -72,30 +72,30 @@ return function(config)
     end
 
     -- Backspace (alternatively, SHIFT-MOUSE4)
-    config.actions["*-MOUSE4"] = function ()
-        if not config.remaps_active then
-            return false
-        end
+    -- config.actions["*-MOUSE4"] = function ()
+    --     if not config.remaps_active then
+    --         return false
+    --     end
 
-        if not check_ingame() then 
-            waywall.press_key("BACKSPACE")
-        else
-            return false -- Pass the key press to MC; do not consume
-        end
+    --     if not check_ingame() then 
+    --         waywall.press_key("BACKSPACE")
+    --     else
+    --         return false -- Pass the key press to MC; do not consume
+    --     end
 
-    end
+    -- end
 
-    config.actions["BACKSPACE"] = function ()
-        if not config.remaps_active then
-            return false
-        end
+    -- config.actions["BACKSPACE"] = function ()
+    --     if not config.remaps_active then
+    --         return false
+    --     end
 
-        if not check_ingame() then 
-            waywall.press_key("MOUSE4")
-        else
-            return false
-        end
-    end
+    --     if not check_ingame() then 
+    --         waywall.press_key("MOUSE4")
+    --     else
+    --         return false
+    --     end
+    -- end
 
     -- Ninbot appears on F3+C
     config.actions["*-C"] = function()
