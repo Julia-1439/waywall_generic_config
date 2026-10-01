@@ -111,6 +111,7 @@ return function(config)
         end
     end
 
+    -- Oneshot crosshair
     local crosshair_image = nil
     local crosshair_active = nil
 
@@ -141,4 +142,9 @@ return function(config)
             })
         end
     end
+
+    -- Custom cursor
+    config.theme.cursor_theme = "crosshair-cursors"
+    config.theme.cursor_icon = "default"
+    config.theme.cursor_size = 24
 end
