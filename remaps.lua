@@ -2,13 +2,13 @@ return {
     remapped_kb = {
         -- Add any playing remaps here
         ["CAPSLOCK"] = "F3", 
-        ["LEFTALT"] = "RIGHTSHIFT",
+        ["MOUSE5"] = "RIGHTSHIFT",
         ["5"] = "0",
         ["MOUSE4"] = "BACKSPACE",
 
         -- Swap to avoid duplicate keys for same input
         ["F3"] = "CAPSLOCK",
-        ["RIGHTSHIFT"] = "LEFTALT",
+        ["RIGHTSHIFT"] = "MOUSE5",
         ["0"] = "5", 
         ["BACKSPACE"] = "MOUSE4"
     },
